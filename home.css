@@ -1,0 +1,86 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.stickyHead {
+    background-color: #120906;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav {
+    text-align: right;
+    margin-left: 200px;
+    font-size: 35px;
+    color: white;
+    position: relative;
+    bottom: 53px;
+    position: relative;
+    transform: translate(-2%, -90%);
+}
+
+.logo {
+    margin-top: 35px;
+    margin-left: 10px;
+    position: relative;
+    transform: translate(0%, -55%);
+    color: #F6F1F1;
+}
+
+.contentbg {
+    height: 1500px;
+    border-color: black;
+    background-image: url("FUDSEL (1).png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+}
+
+.About {
+    position: relative;
+    transform: translate(0%, -85%);
+    border: black;
+    background-color: var(--dark);
+    width: 100%;
+    padding-bottom: 35px;
+    border-radius: 10px;
+    background-color: #120906;
+}
+
+.heada {
+    color: white ;
+    font-size: 450%;
+    margin-top: 20px;
+    padding-top: 70px;
+    text-align: center;
+    
+}
+
+.exp {
+    color: white;
+    font-family: Verdana;
+    font-size: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        margin-left: 0; 
+        font-size: 20px; 
+
+    .contentbg {
+        background-size: cover; 
+    }
+
+    .exp {
+        margin-left: 20px; 
+        margin-right: 20px; 
+    }
+}
+}

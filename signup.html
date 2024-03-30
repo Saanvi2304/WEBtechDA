@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="signupApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-controller="SignupController">
+    <div class="container">
+        <form id="signupForm" name="signupForm" ng-submit="submitForm()" novalidate>
+            <h2>Sign Up</h2>
+            <div class="form-group">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" class="form-control" ng-model="user.username" required>
+                <div ng-show="signupForm.newUsername.$dirty && signupForm.newUsername.$error.required" class="text-danger">Username is required.</div>
+                <div ng-show="signupForm.newUsername.$dirty && signupForm.newUsername.$error.minlength" class="text-danger">Username must have at least 3 characters.</div>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" class="form-control" ng-model="user.password" ng-minlength="5" ng-pattern="/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{5,}$/i" required>
+                <div ng-show="signupForm.newPassword.$dirty && signupForm.newPassword.$error.required" class="text-danger">Password is required.</div>
+                <div ng-show="signupForm.newPassword.$dirty && signupForm.newPassword.$error.minlength" class="text-danger">Password must have at least 5 characters.</div>
+                <div ng-show="signupForm.newPassword.$dirty && signupForm.newPassword.$error.pattern" class="text-danger">Password must contain at least one letter, one number, and one symbol ($@$!%*?&).</div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" ng-model="user.confirmPassword" ng-minlength="5" ng-pattern="user.password" required>
+                <div ng-show="signupForm.confirmPassword.$error.pattern" class="text-danger">Passwords do not match.</div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success" style="background-color: #3E2217; border-color: #3E2217 " ng-disabled="signupForm.$invalid">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="signup.js"></script>
+</body>
+</html>

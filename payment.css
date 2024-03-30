@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap'); 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F3F0E9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col {
+    flex: 0 0 48%;
+}
+
+.title {
+    font-size: 1.5em;
+    color: #3E2217;
+    margin-bottom: 20px;
+}
+
+.inputBox {
+    margin-bottom: 20px;
+}
+
+label {
+    color: #3E2217;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3E2217;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #5F3C2C;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    max-width: 100px;
+}
+
+@media (max-width: 768px) {
+    .col {
+        flex: 0 0 100%;
+    }
+}
